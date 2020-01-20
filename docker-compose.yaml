@@ -103,6 +103,7 @@ services:
       - .docker/dev/logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
       - 9600:9600
+      - 5044:5044
   filebeat:
     depends_on:
       - logstash

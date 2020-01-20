@@ -1,11 +1,11 @@
-filebeat.modules:
-  - module: elasticsearch
-  - module: logstash
-filebeat.inputs:
-  - type: log
-    paths:
-      - /var/www/data/*.log
-output.elasticsearch:
-  hosts: ["elasticsearch:9200"]
-setup.kibana:
-  host: "kibana:5601"
+filebeat:
+  inputs:
+    - type: log
+      paths:
+        - /var/www/data/logstash.*
+output:
+  logstash:
+    hosts: ["logstash:5044"]
+setup:
+  kibana:
+    host: "kibana:5601"
